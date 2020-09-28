@@ -1,3 +1,0 @@
-class Teams
-
-end
