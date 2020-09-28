@@ -1,6 +1,4 @@
-require "nba_players_cli/version"
-
-module NbaPlayersCli
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "./nba_players_cli/version"
+require_relative "./nba_players_cli/api"
+require_relative "./nba_players_cli/cli"
+require_relative "./nba_players_cli/player"
