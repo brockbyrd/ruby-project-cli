@@ -7,10 +7,7 @@ class API
      players_array = JSON.parse(response.body)
      #binding.pry
      players_array["data"].collect do |p|
-       Player.new(first_name: p["first_name"], last_name: last_name)
+       Player.new(first_name: p["first_name"], last_name: last_name, height_feet: p["height_feet"], height_inches: p["height_inches"], weight_pounds: p["weight_pounds"], position: p["position"])
      end
    end
-
 end
-
-# position: p["position"], weight_pounds: p["weight_pounds"], height_feet: ["height_feet"], height_inches: ["height_inches"]
