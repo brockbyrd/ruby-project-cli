@@ -1,5 +1,9 @@
 #!usr/bin/env ruby
 
+require 'pry'
+require 'httparty'
+require 'json'
+
 require_relative '../lib/nba_players_cli'
 
 NbaPlayersCli::CLI.new.call

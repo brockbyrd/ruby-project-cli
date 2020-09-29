@@ -35,8 +35,8 @@ class NbaPlayersCli::CLI
 
   def player_selection(player)
     puts "#{player}"
-    Player.all.find do |player|
-    end
+    #Player.all.find do |player|
+    #end
   end
 
   def list_team
