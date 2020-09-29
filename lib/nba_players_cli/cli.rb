@@ -21,10 +21,9 @@ class NbaPlayersCli::CLI
   end
 
   def list_player
-    puts "1. player 1"
-    puts "2. player 2"
-    puts "3. player 3"
-    puts "4. player 4"
+    Player.all.each.with_index(1) do |n, i|
+      puts "#{i}. #{n.first_name} #{n.last_name}"
+    end
     puts ""
     puts ""
     puts "Which player would you like to know more about"
