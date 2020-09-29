@@ -3,7 +3,7 @@ class NbaPlayersCli::CLI
   def call
      puts "Welcome to the NBA player CLI!"
      puts "What NBA player would you like to know about?"
-     puts "Enter a first and last name: "
+     puts "Enter a last name: "
      API.get_data
      menu
   end
@@ -21,20 +21,22 @@ class NbaPlayersCli::CLI
   end
 
   def list_player
-    puts 'list player'
-    puts 'Type ' + 'team ' + 'to know the team, ' + 'attributes ' + 'to know about their height and weight, or ' + 'position ' + 'to know their position.'
+    puts "1. player 1"
+    puts "2. player 2"
+    puts "3. player 3"
+    puts "4. player 4"
+    puts ""
+    puts ""
+    puts "Which player would you like to know more about"
     input = gets.strip.downcase
-      if input == 'team'
-        list_team
-      elsif input == 'attributes'
-        list_attributes
-      elsif input == 'position'
-        list_position
-      elsif input == 'exit'
-        exit
-      else
-        valid?
-      end
+
+    player_selection(input)
+  end
+
+  def player_selection(player)
+    puts "#{player}"
+    Player.all.find do |player|
+    end
   end
 
   def list_team
