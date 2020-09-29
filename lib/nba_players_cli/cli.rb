@@ -4,25 +4,18 @@ class NbaPlayersCli::CLI
      puts "Welcome to the NBA player CLI!"
      puts "What NBA player would you like to know about?"
      puts "Enter a last name: "
-     API.get_data
-     menu
+     @last_name= gets.strip.downcase
+     API.get_players(@last_name)
+     list_player
   end
 
   def menu
-    input = gets.strip.downcase
 
-    if input == 'player name'
-      list_player
-    elsif input == 'exit'
-      puts 'exit'
-    else
-      valid?
-    end
   end
 
   def list_player
-    Player.all.each.with_index(1) do |n, i|
-      puts "#{i}. #{n.first_name} #{n.last_name}"
+    Player.all.each.with_index(1) do |p, i|
+      puts "#{i}. #{p.first_name} #{p.last_name.capitalize}"
     end
     puts ""
     puts ""

@@ -5,4 +5,4 @@ require_relative "./nba_players_cli/player"
 
 require 'json'
 require 'pry'
-require 'HTTParty'
+require 'rest-client'
