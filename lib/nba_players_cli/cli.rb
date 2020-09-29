@@ -9,27 +9,27 @@ class NbaPlayersCli::CLI
      @last_name = gets.strip.capitalize
      API.get_players(@last_name)
      print_players
-     input = gets.strip.capitalize
+     player_menu
+    input = gets.split.map(&:capitalize).join(' ')
+
+     while input != 'exit' do
+       if input == @last_name
+
+       elsif input.to_i > 0 && input.to_i <= Player.find_by_name(@last_name).length
+
+       end
+     end
   end
 
-  def list_player
-
+  def player_menu
     puts ""
     puts ""
     puts "Enter the number of the player you want to know more about, type in another name or type 'exit' to exit: "
     puts ""
-    input = gets.split.map(&:capitalize).join(' ')
-
-    player_selection(input)
-  end
-
-  def player_selection(player)
-    p = Player.find_by_name(player)
-    binding.pry
   end
 
   def print_players
-    Player.all.each.with_index(1) do |p, i|
+    Player.find_by_name(@last_name).each.with_index(1) do |p, i|
       puts "#{i}. #{p.first_name} #{p.last_name.capitalize}"
     end
   end

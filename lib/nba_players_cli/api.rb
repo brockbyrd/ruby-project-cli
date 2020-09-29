@@ -3,7 +3,7 @@ require 'pry'
 class API
 
    def self.get_players(last_name)
-     response = RestClient.get("https://www.balldontlie.io/api/v1/players/?search=#{last_name}")
+     response = RestClient.get("https://www.balldontlie.io/api/v1/players?search=#{last_name}")
      players_array = JSON.parse(response.body)
      #binding.pry
      players_array["data"].collect do |p|
