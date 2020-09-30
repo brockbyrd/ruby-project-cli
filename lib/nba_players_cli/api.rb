@@ -7,7 +7,14 @@ class API
      players_array = JSON.parse(response.body)
      #binding.pry
      players_array["data"].collect do |p|
-       Player.new(first_name: p["first_name"], last_name: p["last_name"], height_feet: p["height_feet"], weight_pounds: p["weight_pounds"], position: p["position"]) if p["first_name"] != nil && p["last_name"] != nil
+       Player.new(first_name: p["first_name"], last_name: p["last_name"], id: p["id"]) if p["first_name"] != nil && p["last_name"] != nil
      end
    end
+
+   def self.get_player(player)
+     response = RestClient.get("https://www.balldontlie.io/api/v1/players/#{player.id}")
+     players_array["data"].collect do |p|
+       Player.new(first_name: p["first_name"], last_name: p["last_name"], height_feet: p["height_feet"], height_inches: p["height_inches"], weight_pounds: p["weight_pounds"], position: p["position"]) if p["first_name"] != nil && p["last_name"] != nil
+   end
+  end
  end
