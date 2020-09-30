@@ -8,12 +8,17 @@ class NbaPlayersCli::CLI
      @last_name = gets.strip.capitalize
 
      API.get_players(@last_name)
+     API.get_player(@player)
      print_players
      player_menu
      input = gets.strip.capitalize
 
      if input.to_i > 0 && input.to_i <= Player.find_by_name(@last_name).length
        print_player(player)
+     elsif input == "New Name"
+       greeting
+       @last_name = gets.strip.capitalize
+       print_players
      end
  end
 
