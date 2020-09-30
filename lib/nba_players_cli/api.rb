@@ -7,7 +7,7 @@ class API
      players_array = JSON.parse(response.body)
      #binding.pry
      players_array["data"].collect do |p|
-       Player.new(first_name: p["first_name"], last_name: last_name) if p["first_name"] != nil && p["last_name"] != nil
+       Player.new(first_name: p["first_name"], last_name: p["last_name"]) if p["first_name"] != nil && p["last_name"] != nil
      end
    end
 
@@ -22,5 +22,4 @@ class API
      player.position = player_info["position"]
      player.id = player_info["id"]
    end
-   binding.pry
  end
