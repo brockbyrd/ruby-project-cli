@@ -10,6 +10,7 @@ class NbaPlayersCli::CLI
      print_players
      player_menu
      input = gets.strip.downcase
+
      while input != 'exit'
        if input == 'new'
          greeting
@@ -31,7 +32,7 @@ class NbaPlayersCli::CLI
 
   def player_menu
     puts ""
-    puts "Enter the number of the player you want to know more about, type in 'new name' for new players, or type 'exit' to exit: "
+    puts "Enter the number of the player you want to know more about, type in 'new' for new players, or type 'exit' to exit: "
     puts ""
   end
 
