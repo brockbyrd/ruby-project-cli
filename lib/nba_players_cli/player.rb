@@ -10,6 +10,7 @@ class Player
     attr_hash.each do |k, v|
       self.send("#{k}=", v) #if self.respond_to?("#{k}=")
     end
+    @players = []
     @@all << self
   end
 
