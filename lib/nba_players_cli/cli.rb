@@ -16,7 +16,7 @@ class NbaPlayersCli::CLI
        if input == @last_name
 
        elsif input.to_i > 0 && input.to_i <= Player.find_by_name(@last_name).length
-
+         
        end
      end
   end

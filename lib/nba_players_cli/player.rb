@@ -2,7 +2,7 @@ require 'pry'
 
 class Player
 
-  attr_accessor :first_name, :last_name, :height_feet, :height_inches, :weight_pounds, :position
+  attr_accessor :first_name, :last_name, :height_feet, :height_inches, :weight_pounds, :position, :id
 
   @@all = []
 
@@ -14,15 +14,11 @@ class Player
   end
 
   def self.find_by_name(last_name)
-    @@all.select {|player| player.last_name == @last_name}
+    self.all.select {|player| player.last_name == last_name}
     # binding.pry
   end
 
   def self.all
     @@all
-  end
-
-  def save
-    @@all << self
   end
 end
