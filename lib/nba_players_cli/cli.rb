@@ -6,20 +6,27 @@ class NbaPlayersCli::CLI
      puts "Welcome to the NBA player CLI!"
      greeting
      @last_name = gets.strip.capitalize
-
      API.get_players(@last_name)
-     API.get_player(@player)
      print_players
      player_menu
-     input = gets.strip.capitalize
-
-     if input.to_i > 0 && input.to_i <= Player.find_by_name(@last_name).length
-       print_player(player)
-     elsif input == "New Name"
-       greeting
-       @last_name = gets.strip.capitalize
-       print_players
+     input = gets.strip.downcase
+     while input != 'exit'
+       if input == 'new'
+         greeting
+         @last_name = gets.strip.downcase
+         API.get_players(@last_name) if Player.find_by_name(@last_name).length == 0
+         print_players
+       elsif input.to_i > 0 && input.to_i <= Player.find_by_name(@last_name).length
+         player = Player.find_by_name(@last_name)[input.to_i-1]
+         API.get_player(player) if !player.id
+         print_player(player)
+       else
+         puts "No information found, please try again"
+       end
+       player_menu
+       input = gets.strip.downcase
      end
+     puts "Thank you for using the NBA CLI!"
  end
 
   def player_menu
@@ -47,6 +54,6 @@ class NbaPlayersCli::CLI
   end
 
   def no_info
-    puts "No information found, try again"
+    puts "No information found, please try again"
   end
 end
