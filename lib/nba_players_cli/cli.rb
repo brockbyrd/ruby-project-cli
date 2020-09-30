@@ -31,7 +31,7 @@ class NbaPlayersCli::CLI
        elsif input.to_i > 0 && input.to_i <= Player.find_by_name(@last_name).length
 
          player = Player.find_by_name(@last_name)[input.to_i-1]
-         API.get_player(player) if !player.first_name
+         API.get_players(player) if !player.first_name
          print_player(player)
          player_menu
        else
@@ -39,7 +39,7 @@ class NbaPlayersCli::CLI
          player_menu
        end
 
-       input = gets.strip
+       input = gets.strip.capitalize
      end
 
      puts ""
@@ -48,7 +48,7 @@ class NbaPlayersCli::CLI
 
   def player_menu
     puts ""
-    puts "Enter the number of the player you want to know more about, type in another name or type 'exit' to exit: "
+    puts "Enter the number of the player you want to know more about, type in 'New Name' for new players, or type 'exit' to exit: "
     puts ""
   end
 
