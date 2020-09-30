@@ -18,7 +18,7 @@ class NbaPlayersCli::CLI
          API.get_players(@last_name) if Player.find_by_name(@last_name).length == 0
          print_players
        elsif input.to_i > 0 && input.to_i <= Player.find_by_name(@last_name).length
-         p = Player.find_by_name(@last_name)[input.to_i-1]
+         player = Player.find_by_name(@last_name)[input.to_i-1]
          API.get_player(player) if !player.first_name
          print_player(player)
        else
@@ -43,7 +43,7 @@ class NbaPlayersCli::CLI
     end
   end
 
-  def print_player
+  def print_player(player)
     Player.find_by
   end
 

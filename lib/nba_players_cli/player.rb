@@ -2,7 +2,7 @@ require 'pry'
 
 class Player
 
-  attr_accessor :first_name, :last_name, :height_feet, :height_inches, :weight_pounds, :position, :id
+  attr_accessor :first_name, :last_name, :height_feet, :height_inches, :weight_pounds, :position, :id, :player
 
   @@all = []
 

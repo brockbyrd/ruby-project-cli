@@ -16,7 +16,8 @@ class API
      uri = URI(url)
      response = Net::HTTP.get(uri)
      player_info = JSON.parse(response)["data"][0]
-     player.height = player_info["height_feet" + "height_inches"]
+     player.height_feet = player_info["height_feet"]
+     player.height_inches = player_info["height_inches"]
      player.weight = player_info["weight_pounds"]
      player.position = player_info["position"]
      player.id = player_info["id"]
