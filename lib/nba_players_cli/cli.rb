@@ -51,6 +51,7 @@ class NbaPlayersCli::CLI
     puts "Height: #{player.height_feet}' " + "#{player.height_inches}\"" if player.height_feet != nil
     puts "Weight: #{player.weight_pounds}" if player.weight_pounds != nil
     puts "Position: #{player.position}" if player.position != nil
+    puts "Team: #{player.team}" if player.team != nil
   end
 
   def greeting
