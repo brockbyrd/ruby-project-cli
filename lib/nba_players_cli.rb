@@ -3,6 +3,8 @@ require_relative "./nba_players_cli/api"
 require_relative "./nba_players_cli/cli"
 require_relative "./nba_players_cli/player"
 
-require 'json'
 require 'pry'
-require 'rest-client'
+require 'httparty'
+require 'json'
+require 'vine'
+require 'colorize'
