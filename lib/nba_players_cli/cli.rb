@@ -3,7 +3,7 @@ require 'pry'
 class NbaPlayersCli::CLI
   def call
     #Greeting the user
-     puts "Welcome to the NBA player CLI!"
+     puts "Welcome to the NBA player CLI!".red.bold
      greeting
      @name = gets.strip.capitalize
      API.get_players(@name)
@@ -35,7 +35,7 @@ class NbaPlayersCli::CLI
 
   def player_menu
     puts ""
-    puts "Enter the number of the player you want to know more about, type in 'new' for new players, or type 'exit' to exit: "
+    puts "Enter the number of the player you want to know more about, type in 'new' for new players, or type 'exit' to exit: ".bold
     puts ""
   end
 
@@ -55,11 +55,11 @@ class NbaPlayersCli::CLI
   end
 
   def greeting
-    puts "What NBA player would you like to know about?"
-    puts "Enter a first or last name: "
+    puts "What NBA player would you like to know about?".bold
+    puts "Enter a first or last name: ".red.bold
   end
 
   def no_info
-    puts "No information found, please try again"
+    puts "No information found, please try again".red.bold
   end
 end
