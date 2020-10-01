@@ -25,7 +25,7 @@ class NbaPlayersCli::CLI
          # API.get_player(player) if !player.id
          print_player(player)
        else
-         puts "No information found, please try again"
+         puts "No information found, please try again".red.bold
        end
        player_menu
        input = gets.strip.downcase
@@ -57,9 +57,5 @@ class NbaPlayersCli::CLI
   def greeting
     puts "What NBA player would you like to know about?".bold
     puts "Enter a first or last name: ".red.bold
-  end
-
-  def no_info
-    puts "No information found, please try again".red.bold
   end
 end
