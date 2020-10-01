@@ -43,10 +43,10 @@ class NbaPlayersCli::CLI
   end
 
   def print_player(player)
-    puts "Name: #{player.first_name} " + "#{player.last_name}"
-    puts "Height: #{player.height_feet}' " + "#{player.height_inches}"
-    puts "Weight: #{player.weight_pounds}"
-    puts "Position: #{player.position}"
+    puts "Name: #{player.first_name} " + "#{player.last_name.capitalize}"
+    puts "Height: #{player.height_feet}' " + "#{player.height_inches}\"" if player.height_feet != nil
+    puts "Weight: #{player.weight_pounds}" if player.weight_pounds != nil
+    puts "Position: #{player.position}" if player.position != nil
   end
 
   def greeting
