@@ -43,6 +43,7 @@ class NbaPlayersCli::CLI
     # binding.pry
     Player.find_by_name(@name).each.with_index(1) do |p, i|
       puts "#{i}. #{p.first_name} #{p.last_name.capitalize}".bold
+      # binding.pry
     end
   end
 

@@ -15,7 +15,8 @@ class Player
   end
 
   def self.find_by_name(name)
-    self.all.each {|p| p.name == name}
+    self.all.each {|p| p.last_name == name}
+    # binding.pry
   end
 
   def self.all

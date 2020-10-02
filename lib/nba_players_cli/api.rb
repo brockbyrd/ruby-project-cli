@@ -10,7 +10,7 @@ class API
      players=JSON.parse(response)["data"]
      players.each do |p|
        # binding.pry
-       Player.new(first_name: p["first_name"], last_name: p["last_name"], position: p["position"], height_feet: p["height_feet"], height_inches: p["height_inches"], weight_pounds: p["weight_pounds"], id: p["id"], team: p["team"].access("full_name.")) if p["first_name"] != nil && p["last_name"] != nil
+       Player.new(first_name: p["first_name"], last_name: p["last_name"], position: p["position"], height_feet: p["height_feet"], height_inches: p["height_inches"], weight_pounds: p["weight_pounds"], id: p["id"], name: p["name"], team: p["team"].access("full_name.")) if p["first_name"] != nil && p["last_name"] != nil
      end
    end
  end
